@@ -5,7 +5,7 @@ on:
     inputs:
       version: 
         description: Test
-        default: "48.23.0"
+        default: v1.0.0
 
 jobs: 
   create-release:
@@ -26,8 +26,8 @@ jobs:
 
       - name: Create Tag
         run: | 
-          git tag v1.0.0
-          git push origin v1.0.0
+          git tag ${{ inputs.version }}
+          git push origin ${{ inputs.version }}
 
       - name: Execute Script 
         run: |
