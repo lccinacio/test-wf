@@ -1,0 +1,26 @@
+name: Create Release Branch
+
+on: 
+  workflow_dispatch:
+    inputs: 
+      version: 
+        description: "Test Create Release Branch"
+        default: "48.23.0"
+        required: true 
+
+jobs: 
+  create-release:
+    runs-on: ubuntu-latest
+    steps: 
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Create Tag
+        run: | 
+          git tag v1.0.0
+          git push origin v1.0.0
+
+      - name: Execute Script 
+        run: |
+          chmod +x ./scripts/release-branch.sh
+          ./scripts/release-branch.sh
