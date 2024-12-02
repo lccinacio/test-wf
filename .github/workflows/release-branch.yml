@@ -14,13 +14,6 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v4
 
-      - name: Create Tag
-        run: | 
-          git config --global user.name "Lucas In"
-          git config --global user.email  "lucas.in@outlook.com"
-          git tag ${{ inputs.version }}
-          git push origin ${{ inputs.version }}
-
       - name: Execute Script 
         run: |
           chmod +x ./scripts/release-branch.sh
