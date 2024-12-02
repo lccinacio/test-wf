@@ -20,3 +20,4 @@ BRANCH_NAME="teste/${MAJOR}.${NEW_MINOR}.${PATCH}"
     echo "To create the branch with correct ref. delete the current *'$BRANCH_NAME'* and then run workflow again!"
     exit 1
   fi
+    echo $BRANCH_NAME
