@@ -1,7 +1,11 @@
 name: Create Release Branch
 
 on: 
-  [push]
+  workflow_dispatch:
+    inputs: 
+      version: 
+        description: test
+        default: teste
 
 jobs: 
   create-release:
