@@ -14,16 +14,6 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v4
 
-      - name: Set up Git configuration
-        run: |
-          git config --global user.name "GitHub Actions"
-          git config --global user.email "github@actions.com"
-          git add .
-          git commit -m "Automated commit"
-          git push
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
       - name: Create Tag
         run: | 
           git tag ${{ inputs.version }}
