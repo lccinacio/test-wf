@@ -15,4 +15,16 @@ fi
 NEW_MINOR=$((MINOR + 1))
 NAME="teste/${MAJOR}.${NEW_MINOR}.${PATCH}"
 BRANCH_NAME=$(echo $NAME | sed 's/..$/.x/')
+
 echo $BRANCH_NAME
+
+  if git ls-remote --heads origin "$BRANCH_NAME" | grep -q "$BRANCH_NAME"; then
+    echo "The branch '$BRANCH_NAME' already exist in remote repository."
+    echo "To create the branch with correct ref. delete the current *'$BRANCH_NAME'* and then run workflow again!"
+    exit 1
+  fi
+
+  echo "New branch name: $BRANCH_NAME"
+  git checkout -b "$BRANCH_NAME"
+  git push origin "$BRANCH_NAME"
+  exit 0
