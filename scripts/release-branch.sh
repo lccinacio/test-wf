@@ -1,3 +1,3 @@
-#!/bin/bash
-
-(git describe --tags --abbrev=0)
+git fetch --tags
+LAST_TAG=$(git describe --tags $(git rev-list --tags --max-count=1))
+echo "Last tag found: $LAST_TAG"
