@@ -7,10 +7,6 @@ on:
         description: test
         default: teste
 
-      is_hotfix: 
-        description: Is Hotfix
-        default: false
-
 jobs: 
   create-release:
     runs-on: ubuntu-latest
@@ -19,7 +15,6 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Execute Script 
-        if: ${{ inputs.hotfix == false }}
         run: |
           chmod +x ./scripts/release-branch.sh
           ./scripts/release-branch.sh

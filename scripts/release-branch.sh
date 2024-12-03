@@ -13,7 +13,7 @@ else
 fi
   
 NEW_MINOR=$((MINOR + 1))
-NAME="teste-criacao/${MAJOR}.${NEW_MINOR}.${PATCH}"
+NAME="release/${MAJOR}.${NEW_MINOR}.${PATCH}"
 BRANCH_NAME=$(echo $NAME | sed 's/..$/.x/')
 
 echo $BRANCH_NAME
