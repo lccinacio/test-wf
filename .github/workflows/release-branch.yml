@@ -9,6 +9,7 @@ on:
 
 jobs: 
   create-release:
+    if: ${{ github.event.inputs.version == daily-android-sdx-1234 }}
     runs-on: ubuntu-latest
     steps: 
       - name: Checkout Code
@@ -16,5 +17,4 @@ jobs:
 
       - name: Execute Script
         run: |
-          echo ${{ github.event.inputs.version }}
-          echo ${{ github.event.inputs.version.default }}
+          echo "${{ github.event.inputs.version }} TESTE CONCLUIDO"
