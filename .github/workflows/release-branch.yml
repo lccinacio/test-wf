@@ -9,7 +9,7 @@ on:
 
 jobs: 
   create-release:
-    if: ${{ github.event.inputs.version == daily-android-sdx-1234 }}
+    if: ${{ github.event.inputs.version }} == 'daily-android-sdx-1234'
     runs-on: ubuntu-latest
     steps: 
       - name: Checkout Code
