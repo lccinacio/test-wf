@@ -1,11 +1,11 @@
-name: Create Release Branch
+name: Teste
 
 on: 
   workflow_dispatch:
     inputs: 
       version: 
         description: test
-        default: teste
+        default: testando
 
 jobs: 
   create-release:
@@ -15,6 +15,4 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Execute Script 
-        run: |
-          chmod +x ./scripts/release-branch.sh
-          ./scripts/release-branch.sh
+        run: echo ${{ inputs.version.default }}
