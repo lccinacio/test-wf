@@ -5,7 +5,7 @@ on:
     inputs: 
       version: 
         description: test
-        default: testando
+        default: daily-android-sdx-1234
 
 jobs: 
   create-release:
@@ -15,4 +15,4 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Execute Script 
-        run: echo ${{ inputs.version.default }}
+        run: echo ${{ inputs.version }}
