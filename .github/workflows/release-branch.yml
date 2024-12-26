@@ -15,6 +15,6 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Execute Script
-        if: ${{ inputs.version }} == 'daily-android-sdx-1234'
+        if: ${{ inputs.version }} != 'daily-android-sdx-1234'
         run: |
           echo "${{ github.event.inputs.version }} TESTE CONCLUIDO"
